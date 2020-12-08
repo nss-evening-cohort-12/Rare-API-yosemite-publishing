@@ -1,0 +1,13 @@
+[   
+    {
+        "model": "rareapi.post",
+        "pk": 1,
+        "fields": {
+            "title": "The Wonders of the World",
+            "content": "This is a post about the wonders of the world",
+            "category": 1,
+            "publication_date": "2011-09-01T13:20:30+03:00",
+            "header_img_url": "https://www.india.com/wp-content/uploads/2020/04/Seven-Wonders-World.jpg"
+        }
+    }
+]
