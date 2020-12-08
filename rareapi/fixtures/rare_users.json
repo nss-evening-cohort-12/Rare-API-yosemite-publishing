@@ -1,0 +1,22 @@
+[
+  {
+    "model": "rareapi.rare_user",
+    "pk": 1,
+    "fields": {
+      "bio": "VERY cool guy",
+      "profile_image_url": "",
+      "created_on": "2020-12-7",
+      "active": true
+    }
+  },
+  {
+    "model": "rareapi.rare_user",
+    "pk": 2,
+    "fields": {
+      "bio": "VERY uncool guy",
+      "profile_image_url": "",
+      "created_on": "2020-12-5",
+      "active": true
+    }
+  }
+]
