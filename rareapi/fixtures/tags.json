@@ -1,0 +1,30 @@
+[
+  {
+    "model": "rareapi.tag",
+    "pk": 1,
+    "fields": {
+      "lable": "music"
+    }
+  },
+  {
+    "model": "rareapi.tag",
+    "pk": 2,
+    "fields": {
+      "lable": "sports"
+    }
+  },
+  {
+    "model": "rareapi.tag",
+    "pk": 3,
+    "fields": {
+      "lable": "books"
+    }
+  },
+  {
+    "model": "rareapi.tag",
+    "pk": 4,
+    "fields": {
+      "lable": "travel"
+    }
+  },
+]
