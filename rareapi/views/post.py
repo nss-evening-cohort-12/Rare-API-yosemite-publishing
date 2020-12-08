@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.serializers import ListSerializer
 from rest_framework import viewsets
 from rareapi.models import Post
-from rareapi.serializers import postSerializer
+from rareapi.serializers.postSerializer import PostListSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
     def list(self, request):
@@ -17,6 +17,6 @@ class PostViewSet(viewsets.ModelViewSet):
         if category is not None:
             posts = posts.filter(category__id=category)
 
-        serializer = postSerializer(
+        serializer = PostListSerializer(
             posts, many=True, context={'request': request})
         return Response(serializer.data)
