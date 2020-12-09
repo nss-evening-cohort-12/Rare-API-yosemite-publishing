@@ -40,6 +40,7 @@ def register_user(request):
     )
 
     rare_user = RareUser.objects.create(
+        user=new_user,
         bio = req_body['bio'],
         profile_image = req_body['profile_image'],
         created_on = date.today(),
