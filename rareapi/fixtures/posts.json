@@ -3,7 +3,7 @@
         "model": "rareapi.post",
         "pk": 1,
         "fields": {
-            "user_id": 1,
+            "user": 1,
             "title": "The Wonders of the World",
             "content": "This is a post about the wonders of the world",
             "category": 1,

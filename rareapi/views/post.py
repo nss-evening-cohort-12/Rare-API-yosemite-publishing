@@ -7,15 +7,6 @@ from rareapi.models import Post
 from rareapi.serializers.postSerializer import PostListSerializer, PostSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
-
-    def list(self, request):
-        posts = Post.objects.all()
-
-        category = self.request.query_params.get('type', None)
-        if category is not None:
-            posts = posts.filter(category__id=category)
-
-        serializer = PostListSerializer(
-            posts, many=True, context={'request': request})
-        return Response(serializer.data)
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
         
