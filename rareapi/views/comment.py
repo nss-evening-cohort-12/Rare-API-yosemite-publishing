@@ -3,5 +3,5 @@ from rareapi.models import Comment
 from rareapi.serializers import CommentSerializer
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Review.objects.all()
+    queryset = Comment.objects.all()
     serializer_class = CommentSerializer
