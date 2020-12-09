@@ -3,28 +3,28 @@
     "model": "rareapi.tag",
     "pk": 1,
     "fields": {
-      "lable": "music"
+      "label": "music"
     }
   },
   {
     "model": "rareapi.tag",
     "pk": 2,
     "fields": {
-      "lable": "sports"
+      "label": "sports"
     }
   },
   {
     "model": "rareapi.tag",
     "pk": 3,
     "fields": {
-      "lable": "books"
+      "label": "books"
     }
   },
   {
     "model": "rareapi.tag",
     "pk": 4,
     "fields": {
-      "lable": "travel"
+      "label": "travel"
     }
-  },
+  }
 ]

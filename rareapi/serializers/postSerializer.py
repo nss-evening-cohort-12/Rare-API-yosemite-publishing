@@ -6,3 +6,13 @@ class PostListSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id', 'title', 'content', 'category', 'publication_date', 'header_img_url')
         depth = 1
+
+class PostSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Post
+        url = serializers.HyperlinkedIdentityField(
+            view_name='post',
+            lookup_field='id'
+        )
+        fields = ('id', 'title', 'content', 'category', 'publication_date', 'header_img_url')
+        depth = 1

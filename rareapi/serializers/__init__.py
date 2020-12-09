@@ -1,0 +1,1 @@
+from .postSerializer import PostListSerializer, PostSerializer
