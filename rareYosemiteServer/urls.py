@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from rareapi.views import CategoryViewSet
+from rareapi.views import CategoryViewSet, CommentViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryViewSet, 'category')
+router.register(r'comments', CommentViewSet, 'comment')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
