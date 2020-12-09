@@ -1,5 +1,3 @@
-
-=======
 """rareYosemiteServer URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -34,6 +32,4 @@ urlpatterns = [
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('', include(router.urls))
-
-
-
+]
