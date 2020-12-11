@@ -7,17 +7,18 @@ class PostListSerializer(serializers.ModelSerializer):
         fields = ('id', 'user_id', 'title', 'content', 'category', 'publication_date', 'header_img_url')
         depth = 1
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         url = serializers.HyperlinkedIdentityField(
             view_name='post',
             lookup_field='id'
         )
-        fields = ('id', 'user_id', 'title', 'content', 'category', 'publication_date', 'header_img_url')
+        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url')
         depth = 1
 
 class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'user_id', 'title', 'content', 'category', 'publication_date', 'header_img_url')
+        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url')
+        depth = 1
