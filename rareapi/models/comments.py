@@ -8,3 +8,6 @@ class Comment(models.Model):
     content = models.TextField()
     subject = models.CharField(max_length=100)
     created_on = models.DateTimeField()
+
+    class Meta:
+        ordering = ['-created_on']
