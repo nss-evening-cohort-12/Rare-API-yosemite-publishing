@@ -15,3 +15,4 @@ class Post(models.Model):
     )
     publication_date = models.TextField()
     header_img_url = models.TextField()
+    tags = models.ManyToManyField("Tag", related_name="tags", related_query_name="tag")
