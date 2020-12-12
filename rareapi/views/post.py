@@ -15,7 +15,7 @@ class PostViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             tags = serializer.validated_data.pop('tags')
             post = Post.objects.create(**serializer.validated_data)
-            for tag in tags: 
+            for tag in tags:
                 post.tags.add(tag)
 
             serializer = PostListSerializer(post)
