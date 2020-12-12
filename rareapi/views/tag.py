@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rareapi.models import Tag
 from rareapi.serializers import TagSerializer
+
 class TagViewSet(ModelViewSet):
     
     queryset = Tag.objects.all()
