@@ -10,7 +10,9 @@ class Post(models.Model):
     category = models.ForeignKey("Category",
     on_delete=CASCADE,
     related_name="posts",
-    related_query_name="post"
+    related_query_name="post",
+    default=1
     )
     publication_date = models.TextField()
     header_img_url = models.TextField()
+    tags = models.ManyToManyField("Tag", related_name="tags", related_query_name="tag")

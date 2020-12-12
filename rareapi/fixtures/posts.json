@@ -10,5 +10,19 @@
             "publication_date": "2011-09-01T13:20:30+03:00",
             "header_img_url": "https://www.india.com/wp-content/uploads/2020/04/Seven-Wonders-World.jpg"
         }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "title": "The Blunders of the World",
+            "content": "This is a post about the blunders of the world",
+            "category": 2,
+            "publication_date": "2011-09-01T13:20:30+03:00",
+            "header_img_url": "https://www.india.com/wp-content/uploads/2020/04/Seven-Wonders-World.jpg",
+            "tags": [1, 2, 3]
+        }
     }
+
 ]
