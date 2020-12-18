@@ -9,7 +9,6 @@ from rareapi.serializers.postSerializer import PostCreateSerializer, PostListSer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    # filter_backends = (filters.DjangoFilterBackend)
     filter_fields = ('category', 'category__id')
 
     def create(self, request):
@@ -25,21 +24,12 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             return Response(serializer.errors, HttpResponseBadRequest.status_code)
 
-    # def list(self, request):
+    def list(self, request):
+        posts = Post.objects.all()
+        user = self.request.query_params.get('user', None)
 
-    #     posts = Post.objects.all()
+        if user is not None:    
+            posts = posts.filter(user__id=user)
 
-    #     category = self.request.query_params.get('category')
-    #     if category is not None:
-    #         posts = posts.filter(category__id=category)
-    #         return posts
-
-    #     serializer = PostListSerializer(posts, many=True, context={'request': request})
-    #     return Response(serializer.data)
-
-
-
-# In list
-# / game_type = self.request.query_params.get('type', None)
-#        if game_type is not None:
-#           games = games.filter(gametype__id=game_type)
+        serializer = PostSerializer(posts, many=True, context={'request': request})
+        return Response(serializer.data)
