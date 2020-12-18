@@ -22,3 +22,21 @@ class PostViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, HttpResponseBadRequest.status_code)
+
+    def list(self, request):
+
+        posts = Post.objects.all()
+
+        cat = self.request.query_params.get('category', None)
+        if cat is not None:
+            posts = posts.filter(category__id=cat)
+
+        serializer = PostListSerializer(posts, many=True, context={'request': request})
+        return Response(serializer.data)
+
+
+
+# In list
+# / game_type = self.request.query_params.get('type', None)
+#        if game_type is not None:
+#           games = games.filter(gametype__id=game_type)
