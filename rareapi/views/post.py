@@ -3,12 +3,14 @@ from django.core.exceptions import ValidationError
 from rest_framework import status
 from django.http import HttpResponseServerError
 from rest_framework.response import Response
-from rest_framework import viewsets
-from rareapi.models import Post, Category
+from rest_framework import viewsets, filters
+from rareapi.models import Post, Category, category
 from rareapi.serializers.postSerializer import PostCreateSerializer, PostListSerializer, PostSerializer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    # filter_backends = (filters.DjangoFilterBackend)
+    filter_fields = ('category', 'category__id')
 
     def create(self, request):
         serializer = PostCreateSerializer(data=request.data)
@@ -23,16 +25,17 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             return Response(serializer.errors, HttpResponseBadRequest.status_code)
 
-    def list(self, request):
+    # def list(self, request):
 
-        posts = Post.objects.all()
+    #     posts = Post.objects.all()
 
-        cat = self.request.query_params.get('category', None)
-        if cat is not None:
-            posts = posts.filter(category__id=cat)
+    #     category = self.request.query_params.get('category')
+    #     if category is not None:
+    #         posts = posts.filter(category__id=category)
+    #         return posts
 
-        serializer = PostListSerializer(posts, many=True, context={'request': request})
-        return Response(serializer.data)
+    #     serializer = PostListSerializer(posts, many=True, context={'request': request})
+    #     return Response(serializer.data)
 
 
 
