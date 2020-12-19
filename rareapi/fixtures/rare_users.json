@@ -20,5 +20,16 @@
       "created_on": "2020-12-5",
       "active": true
     }
+  },
+  {
+      "model": "rareapi.rareuser",
+      "pk": 3,
+      "fields": {
+        "user": 3,
+        "bio": "VERY really uncool guy",
+        "profile_image": "",
+        "created_on": "2020-12-4",
+        "active": true
+    }
   }
 ]
