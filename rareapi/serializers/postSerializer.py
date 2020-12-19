@@ -15,7 +15,7 @@ class PostSerializer(serializers.ModelSerializer):
             lookup_field='id'
         )
         fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags')
-        depth = 1
+        depth = 2
 
 class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:

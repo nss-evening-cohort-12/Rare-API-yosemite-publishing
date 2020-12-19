@@ -53,5 +53,5 @@ def register_user(request):
 
     token = Token.objects.create(user=new_user)
 
-    data = json.dumps({'token': token.key})
+    data = json.dumps({'token': token.key, "user_id": new_user.id})
     return HttpResponse(data, content_type="application/json")
