@@ -10,3 +10,5 @@ class RareUser(models.Model):
     profile_image_url = models.ImageField(name="profile_image", default="")
     created_on = models.DateField()
     active = models.BooleanField()
+
+    
