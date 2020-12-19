@@ -6,7 +6,7 @@ from django.db.models.fields import related
 class Post(models.Model):
     user = models.ForeignKey("RareUser", related_name="posts", on_delete=CASCADE, default=1)
     title = models.CharField(max_length=75)
-    content = models.CharField(max_length=150)
+    content = models.TextField()
     category = models.ForeignKey("Category",
     on_delete=CASCADE,
     related_name="posts",
