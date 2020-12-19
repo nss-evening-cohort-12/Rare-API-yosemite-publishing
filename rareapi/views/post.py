@@ -9,7 +9,7 @@ from rareapi.serializers.postSerializer import PostCreateSerializer, PostListSer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_fields = ('category', 'category__id')
+    filter_fields = ('category', 'category__id', 'user', 'user__id')
 
     def create(self, request):
         serializer = PostCreateSerializer(data=request.data)
@@ -24,12 +24,12 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             return Response(serializer.errors, HttpResponseBadRequest.status_code)
 
-    def list(self, request):
-        posts = Post.objects.all()
-        user = self.request.query_params.get('user', None)
+    # def list(self, request):
+    #     posts = Post.objects.all()
+    #     user = self.request.query_params.get('user', None)
 
-        if user is not None:    
-            posts = posts.filter(user__id=user)
+    #     if user is not None:    
+    #         posts = posts.filter(user__id=user)
 
-        serializer = PostSerializer(posts, many=True, context={'request': request})
-        return Response(serializer.data)
+    #     serializer = PostSerializer(posts, many=True, context={'request': request})
+    #     return Response(serializer.data)
