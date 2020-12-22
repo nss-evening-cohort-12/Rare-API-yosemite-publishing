@@ -1,6 +1,7 @@
 from rest_framework import viewsets
 from rareapi.models import RareUser
 
+
 from rareapi.serializers.rare_user import UserSerializer
 
 
