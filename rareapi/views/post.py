@@ -9,7 +9,9 @@ from rareapi.serializers.postSerializer import PostCreateSerializer, PostListSer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_fields = ('category', 'category__id', 'user', 'user__id', 'tags' )
+    filter_fields = ('category', 'category__id', 'user', 'user__id', 'tags__label' )
+    # filter_backends = (filters.SearchFilter)
+    search_fields = ('tags__label')
 
     def create(self, request):
         serializer = PostCreateSerializer(data=request.data)
