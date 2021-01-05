@@ -4,12 +4,12 @@ from rest_framework import status
 from django.http import HttpResponseServerError
 from rest_framework.response import Response
 from rest_framework import viewsets, filters
-from rareapi.models import Post, Category, category
+from rareapi.models import Post, Category, category, tag
 from rareapi.serializers.postSerializer import PostCreateSerializer, PostListSerializer, PostSerializer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_fields = ('category', 'category__id', 'user', 'user__id')
+    filter_fields = ('category', 'category__id', 'user', 'user__id', 'tags' )
 
     def create(self, request):
         serializer = PostCreateSerializer(data=request.data)
