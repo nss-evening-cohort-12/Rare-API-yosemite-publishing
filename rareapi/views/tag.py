@@ -11,4 +11,5 @@ class TagViewSet(ModelViewSet):
     
     queryset = Tag.objects.all()
     serializer_class=TagSerializer
-    filter_fields = ('post', 'post__id')
+    filter_fields = ('post', 'post__id', 'label')
+    search_fields = ('label')

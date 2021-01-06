@@ -9,7 +9,7 @@
             "category": 1,
             "publication_date": "2011-09-01T13:20:30+03:00",
             "header_img_url": "https://www.india.com/wp-content/uploads/2020/04/Seven-Wonders-World.jpg",
-            "tags": [1, 2, 3]
+            "tags": [3]
         }
     },
     {
@@ -22,7 +22,7 @@
             "category": 2,
             "publication_date": "2011-09-01T13:20:30+03:00",
             "header_img_url": "https://www.india.com/wp-content/uploads/2020/04/Seven-Wonders-World.jpg",
-            "tags": [1, 2, 3]
+            "tags": [1, 2]
         }
     }
 
