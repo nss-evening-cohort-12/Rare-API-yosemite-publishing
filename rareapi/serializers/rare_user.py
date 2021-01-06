@@ -6,5 +6,5 @@ class UserSerializer(serializers.ModelSerializer):
   
     class Meta:
         model = RareUser
-        fields = ('id', 'user')
+        fields = ('id', 'user', 'bio', 'profile_image', 'created_on', 'active')
         depth = 2
