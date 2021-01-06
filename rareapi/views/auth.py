@@ -34,8 +34,6 @@ def login_user(request):
 
 @csrf_exempt
 def register_user(request):
-    import pdb
-   
     req_body = json.loads(request.body.decode())
 
     new_user = User.objects.create_user(
@@ -59,8 +57,7 @@ def register_user(request):
     format, imgstr = req_body['avatar_url'].split(';base64,')
     ext = format.split('/')[-1]
     image_data = ContentFile(base64.b64decode(imgstr), name=f'{uuid.uuid4()}.{ext}')
-    pdb.set_trace()
-    rare_user.profile_image_url = image_data
+    rare_user.profile_image = image_data
 
     rare_user.save()
 
