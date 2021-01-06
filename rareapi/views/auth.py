@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.models import Token
 from rareapi.models import RareUser
+from django.core.files.base import ContentFile
+import base64
+import uuid
 
 
 
@@ -31,6 +34,8 @@ def login_user(request):
 
 @csrf_exempt
 def register_user(request):
+    import pdb
+   
     req_body = json.loads(request.body.decode())
 
     new_user = User.objects.create_user(
@@ -40,14 +45,22 @@ def register_user(request):
         first_name  = req_body['first_name'],
         last_name = req_body['last_name']
     )
+    
+
 
     rare_user = RareUser.objects.create(
+
         user=new_user,
         bio = req_body['bio'],
-        profile_image = req_body['profile_image'],
         created_on = date.today(),
         active = True
     )
+
+    format, imgstr = req_body['avatar_url'].split(';base64,')
+    ext = format.split('/')[-1]
+    image_data = ContentFile(base64.b64decode(imgstr), name=f'{uuid.uuid4()}.{ext}')
+    pdb.set_trace()
+    rare_user.profile_image_url = image_data
 
     rare_user.save()
 

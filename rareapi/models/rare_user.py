@@ -7,8 +7,6 @@ from django.db.models.fields import related
 class RareUser(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=CASCADE)
     bio = models.CharField(max_length=100)
-    profile_image_url = models.ImageField(name="profile_image", default="")
+    profile_image_url = models.ImageField(upload_to='avatars', null=True)
     created_on = models.DateField()
     active = models.BooleanField()
-
-    
