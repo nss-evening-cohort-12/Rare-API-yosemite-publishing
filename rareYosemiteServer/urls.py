@@ -21,6 +21,9 @@ from rest_framework import routers
 from rareapi.views import register_user, login_user, CategoryViewSet, CommentViewSet, TagViewSet, PostViewSet, AuthUserViewSet
 from rareapi.views.rare_user import UserViewSet
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'categories', CategoryViewSet, 'category')
 router.register(r'comments', CommentViewSet, 'comment')
@@ -36,4 +39,4 @@ urlpatterns = [
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('', include(router.urls))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
