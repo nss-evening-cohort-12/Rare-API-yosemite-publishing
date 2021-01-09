@@ -10,3 +10,4 @@ class RareUser(models.Model):
     profile_image = models.ImageField(upload_to='avatars', null=True)
     created_on = models.DateField()
     active = models.BooleanField()
+    subscriptions = models.ForeignKey("Subscription",on_delete=CASCADE, related_name="author_ids", related_query_name="subscription_author_id", default=1)

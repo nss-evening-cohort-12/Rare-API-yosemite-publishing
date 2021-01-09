@@ -4,3 +4,4 @@ from .category import Category
 from .comments import Comment
 from .post import Post
 from .reactions import Reactions
+from .subscription import Subscription

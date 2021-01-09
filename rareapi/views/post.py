@@ -24,13 +24,3 @@ class PostViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, HttpResponseBadRequest.status_code)
-
-    # def list(self, request):
-    #     posts = Post.objects.all()
-    #     user = self.request.query_params.get('user', None)
-
-    #     if user is not None:    
-    #         posts = posts.filter(user__id=user)
-
-    #     serializer = PostSerializer(posts, many=True, context={'request': request})
-    #     return Response(serializer.data)
