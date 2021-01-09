@@ -14,5 +14,5 @@ class Post(models.Model):
     default=1
     )
     publication_date = models.TextField()
-    header_img_url = models.TextField()
+    header_img_url = models.ImageField(upload_to='headerimg', null=True)
     tags = models.ManyToManyField("Tag", related_name="posts", related_query_name="post")
