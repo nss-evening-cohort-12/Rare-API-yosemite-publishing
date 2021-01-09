@@ -7,7 +7,8 @@
       "bio": "VERY cool guy",
       "profile_image": "",
       "created_on": "2020-12-7",
-      "active": true
+      "active": true,
+      "subscriptions": 1
     }
   },
   {
@@ -18,7 +19,8 @@
       "bio": "VERY uncool guy",
       "profile_image": "",
       "created_on": "2020-12-5",
-      "active": true
+      "active": true,
+      "subscriptions":1
     }
   },
   {
@@ -29,7 +31,8 @@
         "bio": "VERY really uncool guy",
         "profile_image": "",
         "created_on": "2020-12-4",
-        "active": true
+        "active": true,
+        "subscriptions": 1
     }
   }
 ]
