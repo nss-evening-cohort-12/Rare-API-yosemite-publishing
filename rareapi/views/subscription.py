@@ -1,7 +1,7 @@
 from rest_framework import viewsets
-from rareapi.models import RareUser
+from rareapi.models import Subscription
 from rareapi.serializers.subscription import SubscriptionSerializer
 
 class SubscriptionViewSet(viewsets.ModelViewSet):
-    queryset = RareUser.objects.all()
+    queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
