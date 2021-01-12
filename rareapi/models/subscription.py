@@ -5,6 +5,5 @@ from django.db.models.expressions import Case
 from django.db.models.fields import related
 
 class Subscription(models.Model):
-    follower_id = models.ForeignKey("RareUser", related_name="followers", related_query_name="follower", on_delete=CASCADE)
-    author_id  = models.ForeignKey("RareUser", on_delete=CASCADE, related_name="authors", related_query_name="author")
-
+    follower_id = models.ForeignKey("RareUser", related_name="subscriptions", related_query_name="subscription", on_delete=CASCADE)
+    author_id  = models.ForeignKey("RareUser", on_delete=CASCADE, related_name="subscribers", related_query_name="subscriber")
