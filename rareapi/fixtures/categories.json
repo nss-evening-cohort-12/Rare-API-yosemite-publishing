@@ -1,0 +1,31 @@
+[
+    {
+        "model": "rareapi.category",
+        "pk":1,
+        "fields": {
+            "label": "Sports"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk":2,
+        "fields": {
+            "label": "Movies"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk":3,
+        "fields": {
+            "label": "Food"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk":4,
+        "fields": {
+            "label": "Books"
+        }
+    }
+
+]
