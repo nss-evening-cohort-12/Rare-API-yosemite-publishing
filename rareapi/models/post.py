@@ -17,3 +17,4 @@ class Post(models.Model):
     header_img_url = models.ImageField(upload_to='headerimg', null=True)
     tags = models.ManyToManyField("Tag", related_name="posts", related_query_name="post")
     approved = models.BooleanField(default=False)
+    reactions = models.ManyToManyField("Reactions", related_name="posts", related_query_name="post")
