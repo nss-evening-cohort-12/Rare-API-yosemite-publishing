@@ -3,6 +3,30 @@
     "model": "rareapi.subscription",
     "pk": 1,
     "fields": {
+      "follower_id": 4,
+      "author_id": 1
+    }
+  },
+  {
+    "model": "rareapi.subscription",
+    "pk": 2,
+    "fields": {
+      "follower_id": 4,
+      "author_id": 5
+    }
+  },
+  {
+    "model": "rareapi.subscription",
+    "pk": 3,
+    "fields": {
+      "follower_id": 1,
+      "author_id": 2
+    }
+  },
+  {
+    "model": "rareapi.subscription",
+    "pk": 4,
+    "fields": {
       "follower_id": 2,
       "author_id": 1
     }

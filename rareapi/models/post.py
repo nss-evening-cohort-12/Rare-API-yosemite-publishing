@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db.models.fields import related
 
 class Post(models.Model):
-    user = models.ForeignKey("RareUser", related_name="posts", on_delete=CASCADE, default=1)
+    user = models.ForeignKey("RareUser", related_name="posts", related_query_name="post", on_delete=CASCADE, default=1)
     title = models.CharField(max_length=75)
     content = models.TextField()
     category = models.ForeignKey("Category",
