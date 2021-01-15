@@ -4,7 +4,7 @@ from rareapi.models import Post
 class PostListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'user_id', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags')
+        fields = ('id', 'user_id', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags', 'approved', 'reactions')
         depth = 1
 
 class PostSerializer(serializers.ModelSerializer):
@@ -14,10 +14,10 @@ class PostSerializer(serializers.ModelSerializer):
             view_name='post',
             lookup_field='id'
         )
-        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags')
+        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags', 'approved', 'reactions')
         depth = 2
 
 class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags')
+        fields = ('id', 'user', 'title', 'content', 'category', 'publication_date', 'header_img_url', 'tags', 'approved', 'reactions')
