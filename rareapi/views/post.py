@@ -29,6 +29,7 @@ class PostViewSet(viewsets.ModelViewSet):
             post.user = rare_user
             category = Category.objects.get(pk=request.data['category'])
             post.category = category
+            post.approved = request.data['approved']
             
             try:
                 post.save()
@@ -53,6 +54,7 @@ class PostViewSet(viewsets.ModelViewSet):
             post.user = rare_user
             category = Category.objects.get(pk=request.data['category'])
             post.category = category
+            post.approved = request.data['approved']
             
             try:
                 post.save()
